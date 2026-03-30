@@ -95,4 +95,11 @@ def build_issue_details(result: dict) -> str:
             else "Date order is valid"
         )
 
+    if result["check_name"] == "key_check":
+        return (
+            f"Missing key values found in column {result['column_name']}"
+            if result["issue_count"] > 0
+            else "No missing key values found"
+        )
+
     return "Check completed"
