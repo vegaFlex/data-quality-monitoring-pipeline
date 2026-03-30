@@ -16,6 +16,14 @@ Database setup files:
 - `sql/create_data_quality_log.sql` creates the logging table in schema `dq_monitoring`
 - `sql/seed_source_data.sql` inserts test data with intentional data quality issues
 
+## Step 5
+
+Current pipeline flow:
+- test PostgreSQL connection
+- read source data into pandas
+- run NULL checks
+- write check results into `dq_monitoring.data_quality_log`
+
 ## Setup
 
 1. Create a virtual environment.
