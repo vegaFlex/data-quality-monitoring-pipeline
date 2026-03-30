@@ -29,6 +29,7 @@ Current pipeline flow:
 - checks are orchestrated from `src/dq_monitoring/pipeline/runner.py`
 - `run_pipeline.py` is now a clean entry point
 - email alerts support is added with `EMAIL_ALERT_ENABLED=false` by default
+- `run_pipeline.bat` is ready for Windows Task Scheduler
 
 ## Setup
 
@@ -37,3 +38,13 @@ Current pipeline flow:
 3. Copy `.env.example` to `.env`.
 4. Fill in your PostgreSQL credentials.
 5. Run `python run_pipeline.py`.
+
+## Scheduler
+
+For Windows Task Scheduler:
+
+1. Open Task Scheduler
+2. Create a new Basic Task
+3. Choose the trigger you want
+4. Set the action to start:
+   `C:\Users\vega_\Documents\Playground\data-quality-monitoring-pipeline\run_pipeline.bat`
