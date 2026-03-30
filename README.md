@@ -28,6 +28,7 @@ Current pipeline flow:
 
 - checks are orchestrated from `src/dq_monitoring/pipeline/runner.py`
 - `run_pipeline.py` is now a clean entry point
+- email alerts support is added with `EMAIL_ALERT_ENABLED=false` by default
 
 ## Setup
 

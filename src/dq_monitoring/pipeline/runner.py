@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from src.dq_monitoring.alerts.email_alert import send_email_alert
 from src.dq_monitoring.checks.date_checks import (
     print_date_check_results,
     run_date_checks,
@@ -72,6 +73,7 @@ def run_pipeline() -> None:
     print_log_write_summary(all_check_results, run_id)
     report_path = generate_excel_report(all_check_results, run_id)
     print_report_summary(report_path)
+    send_email_alert(all_check_results, run_id)
     logger.info(
         "Pipeline finished with run_id=%s and %s check results",
         run_id,
