@@ -74,4 +74,11 @@ def build_issue_details(result: dict) -> str:
             else "No duplicate records found"
         )
 
+    if result["check_name"] == "negative_value_check":
+        return (
+            f"Negative values found in column {result['column_name']}"
+            if result["issue_count"] > 0
+            else "No negative values found"
+        )
+
     return "Check completed"
