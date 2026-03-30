@@ -31,6 +31,10 @@ from src.dq_monitoring.db.log_writer import (
 )
 from src.dq_monitoring.db.reader import read_source_data, test_read_source_data
 from src.dq_monitoring.logging_config.logger import get_logger
+from src.dq_monitoring.reports.excel_report import (
+    generate_excel_report,
+    print_report_summary,
+)
 
 
 def run_pipeline() -> None:
@@ -66,6 +70,8 @@ def run_pipeline() -> None:
 
     write_check_results_to_log(all_check_results, run_id)
     print_log_write_summary(all_check_results, run_id)
+    report_path = generate_excel_report(all_check_results, run_id)
+    print_report_summary(report_path)
     logger.info(
         "Pipeline finished with run_id=%s and %s check results",
         run_id,
