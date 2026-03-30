@@ -9,3 +9,7 @@ pipeline.log
 logs/*.log
 reports/*
 !reports/.gitkeep
+1.png
+2.png
+3.png
+main photo.png

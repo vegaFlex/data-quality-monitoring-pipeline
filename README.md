@@ -2,6 +2,8 @@
 
 Production-style portfolio project for automated data quality monitoring with PostgreSQL, pandas, SQLAlchemy, Excel reporting, email alerts, logging, scheduler support, and Power BI-ready views.
 
+![Project overview](docs/images/project-overview.png)
+
 ## Features
 
 - Reads source data from PostgreSQL
@@ -95,3 +97,11 @@ Recommended visuals:
 - Clustered bar chart: issues by check name
 - Table: failed checks by column
 - Slicer: `run_id`
+
+Power BI file:
+
+- `data_quality_monitoring_dashboard.pbix`
+
+Dashboard preview:
+
+![Power BI dashboard overview](docs/images/power-bi-dashboard-overview.png)
