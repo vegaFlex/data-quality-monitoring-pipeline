@@ -48,3 +48,18 @@ For Windows Task Scheduler:
 3. Choose the trigger you want
 4. Set the action to start:
    `C:\Users\vega_\Documents\Playground\data-quality-monitoring-pipeline\run_pipeline.bat`
+
+## Power BI
+
+Use these PostgreSQL objects in Power BI:
+
+- `dq_monitoring.vw_quality_status`
+- `dq_monitoring.vw_quality_summary`
+
+Recommended visuals:
+
+- Card: total failed checks
+- Card: total issues
+- Clustered bar chart: issues by check name
+- Table: failed checks by column
+- Slicer: run_id
