@@ -24,6 +24,11 @@ Current pipeline flow:
 - run NULL checks
 - write check results into `dq_monitoring.data_quality_log`
 
+## Current Status
+
+- checks are orchestrated from `src/dq_monitoring/pipeline/runner.py`
+- `run_pipeline.py` is now a clean entry point
+
 ## Setup
 
 1. Create a virtual environment.
