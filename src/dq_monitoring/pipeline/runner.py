@@ -30,10 +30,13 @@ from src.dq_monitoring.db.log_writer import (
     write_check_results_to_log,
 )
 from src.dq_monitoring.db.reader import read_source_data, test_read_source_data
+from src.dq_monitoring.logging_config.logger import get_logger
 
 
 def run_pipeline() -> None:
+    logger = get_logger()
     run_id = datetime.now().strftime("%Y%m%d%H%M%S")
+    logger.info("Pipeline started with run_id=%s", run_id)
     test_connection()
     test_read_source_data()
     source_data = read_source_data()
@@ -63,3 +66,8 @@ def run_pipeline() -> None:
 
     write_check_results_to_log(all_check_results, run_id)
     print_log_write_summary(all_check_results, run_id)
+    logger.info(
+        "Pipeline finished with run_id=%s and %s check results",
+        run_id,
+        len(all_check_results),
+    )
