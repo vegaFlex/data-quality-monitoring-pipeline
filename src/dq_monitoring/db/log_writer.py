@@ -102,4 +102,11 @@ def build_issue_details(result: dict) -> str:
             else "No missing key values found"
         )
 
+    if result["check_name"] == "type_check":
+        return (
+            f"Invalid data type detected for column {result['column_name']}"
+            if result["issue_count"] > 0
+            else "Data type is valid"
+        )
+
     return "Check completed"
