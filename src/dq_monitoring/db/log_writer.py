@@ -81,4 +81,18 @@ def build_issue_details(result: dict) -> str:
             else "No negative values found"
         )
 
+    if result["check_name"] == "date_check":
+        if result["column_name"] == "shipment_date":
+            return (
+                "Missing shipment dates found"
+                if result["issue_count"] > 0
+                else "No missing shipment dates found"
+            )
+
+        return (
+            "Shipment date is earlier than order date"
+            if result["issue_count"] > 0
+            else "Date order is valid"
+        )
+
     return "Check completed"
